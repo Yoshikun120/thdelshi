@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <title>DELshi.que — Private Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <section id="loginView" class="panel login-panel">
+      <div class="avatar-wrap"><img src="assets/profile.jpg" alt="Profile"></div>
+      <p class="eyebrow">PRIVATE ACCESS</p>
+      <h1>ยินดีต้อนรับ</h1>
+      <p class="muted">ต้องใช้รหัสในการเข้าถึง</p>
+      <form id="loginForm" class="stack">
+        <label class="sr-only" for="password">รหัสผ่าน</label>
+        <input id="password" type="password" placeholder="กรอกรหัสผ่าน" autocomplete="off" required>
+        <button type="submit">ยืนยัน <span>→</span></button>
+        <p id="loginError" class="message error" aria-live="polite"></p>
+      </form>
+      <p class="tiny-note">โปรดใช้เฉพาะข้อมูลที่คุณมีสิทธิ์เข้าถึง</p>
+    </section>
+
+    <section id="searchView" class="panel search-panel" hidden>
+      <header class="topbar">
+        <div><p class="eyebrow">DELshi.que / DATABASE</p><h1>ค้นหาข้อมูล</h1></div>
+        <button id="logoutBtn" class="ghost" type="button">ออกจากระบบ</button>
+      </header>
+      <p class="muted intro">ค้นหาจากชื่อ หรือรหัสอ้างอิงภายในที่ไม่ใช่เลขบัตรประชาชน</p>
+      <form id="searchForm" class="stack">
+        <label for="nameQuery">ชื่อ</label>
+        <input id="nameQuery" type="search" placeholder="พิมพ์ชื่อที่ต้องการค้นหา">
+        <label for="refQuery">รหัสอ้างอิง</label>
+        <input id="refQuery" type="text" placeholder="กรอกรหัสอ้างอิง (ถ้ามี)">
+        <button type="submit">ค้นหาข้อมูล <span>⌕</span></button>
+      </form>
+      <div class="result-head"><span>SEARCH RESULTS</span><span id="resultCount">0 รายการ</span></div>
+      <div id="results" class="results" aria-live="polite">
+        <div class="empty-state"><div class="empty-icon">⌕</div><p>กรอกคำค้นหาเพื่อเริ่มต้น</p></div>
+      </div>
+      <p class="source-note">ข้อมูลอ่านจาก <code>data/database.txt</code></p>
+    </section>
+    <footer>สร้างโดย <strong>delshi.que</strong> <span>© ALL RIGHTS RESERVED</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
